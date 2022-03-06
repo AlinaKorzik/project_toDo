@@ -90,12 +90,18 @@ addNoteButton.addEventListener("click", () => {
         delete tasksArray[deleteButton.id]  
 
         individualTaskContainer.remove()
+
         }) 
     }
 
     const wrongTaskMessage = () => {
 
         for(let i = 0; i<tasksArray.length; i++) {
+
+            if(typeof tasksArray[i] == 'undefined') {
+
+                continue
+            } 
 
             if (tasksArray[i].text === input.value) {
 
